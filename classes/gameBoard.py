@@ -3,6 +3,7 @@ class file for the game board
 
 """
 
+from figures import Figure
 
 # base class for a game board, has attributes 'size'
 class GameBoard:
@@ -19,7 +20,17 @@ class GameBoard:
     def game_won(self):
         self.solved = True
 
-    # fills in the game board with all the locations of the figures
+    # populates the entire game board, using the list of figures given
     def populate_board(self, figures_list):
-        self.solved = True
+        for figure in figures_list:
+            self.designate_squares(figure)
+
+    # takes a given figure, and designates which squares it occupies on the game board
+    def designate_squares(self, figure):
+        # the calculation for determining which square is directly below the origin:
+        if figure.feature is 'down':
+            for i in range(figure.origin[])
+        elif:
+
+
 
