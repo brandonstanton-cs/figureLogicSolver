@@ -14,6 +14,16 @@ class Figure:
         self.value = 0        # the integer value of the figure
         self.length = length  # the length of the figure
         self.origin = origin  # where the first number resides on the game board
+        self.characteristic = None
+
+    # associates a characteristic to solve the value of the figure with other figures!
+    def set_characteristic(self, characteristic):
+        self.characteristic = characteristic
+
+    def select_characteristic(self):
+        print("Select Characteristic")
+        print(self.value)
+        # TODO create map of associations that can be made between figures, e.g. 'Sum', 'Multiple', etc.
 
 
 # subclass of Figure, a down figure has a different method for determining its adjoining squares on the game board
