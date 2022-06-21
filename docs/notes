@@ -1,0 +1,42 @@
+Process of starting a Figure Logic Game:
+BOARD SETUP:
+1) Establish Board Size (x && y)
+    a) all cells will start off as dead cells
+
+FIGURE SETUP:
+2) Ask User for Figures,
+    a) across first
+    b) then down
+    c) when the number of grid tiles divided by the unique origin cell count is between 2 and 3
+    start asking if they're done? (this is taken to be the average ratio, fell between 2.1, and 2.9)
+    d) when across count, and down count are mostly even-- also start asking if they're done?
+
+    TODO: should honestly just create an interface for someone to fill in!
+
+ASSOCIATE FIGURES WITH BOARD CELLS:
+3) When all figures are entered, take lengths, and string across the board using their length and
+direction...
+    a) all the starting cells associated with the figures will be labelled as an 'origin'
+        i) when all origin cells are entered-- they will be numbered based off whether they are a unique origin cell or
+        not-- (figures that share a starting cell will be numbered the same)
+        ii) each figure will then be given a unique identifier, based on the direction, and which cell they originate from
+        e.g. an across cell that originates from the origin 3 will be given 'a3', a down cell originating from 4 will be 'd4'
+
+    POPULATE REMAINING CELLS FROM THE ORIGINS OF FIGURES:
+    b) using the length and direction of the figures, the cells stringing off the origin up to figure length will be labelled
+    'live' and will be associated with a figure's unique identifier... i.e. if an across figure has origin of [0,0],
+    length 3, origin count of 1-- then the cells associated with 'a1' will be: [0,0], [1,0], [2,0]!
+
+    CONSTRUCT DICTIONARY OF FIGURES ON THE BOARD:
+    c) a dictionary will be constructed using these arrays of associated coordinates with their unique identifier!
+    (a dictionary of lists-- good for lookup and comparison)
+
+ASSOCIATE FIGURES ON BOARD WITH ONE ANOTHER USING RELATIONS:
+4) now that all figures have unique identifiers we can associate them using characteristics and relating to one another
+using a sleugh of relations, using other unique identifiers as input... this will be done until all figures have a relationship
+
+SOLVE PUZZLE USING VARIETY OF STRATEGIES:
+solving a hint can fall into several categories:
+    - brute force
+    - elimination
+    -
