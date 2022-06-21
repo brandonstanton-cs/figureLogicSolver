@@ -15,3 +15,7 @@ class Figure:
         self.origin = [x_origin, y_origin]  # where the first number resides on the game board
         self.characteristic = Characteristic()
         self.is_across = if_across
+
+    def describe_figure(self):
+        print("Figure details:")
+        print("origin: " + str(self.origin) + ", length: " + str(self.length) + ", is across?: " + str(self.is_across))
